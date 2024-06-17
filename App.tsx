@@ -1,24 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { PaperProvider } from 'react-native-paper';
 import { QueryClientProvider } from '@tanstack/react-query';
-import { StyleSheet, Text, View } from 'react-native';
+import { useColorScheme } from 'react-native';
 import queryClient from '@/services/queryClient';
+import Navigation from '@/navigation';
 
 export default function App() {
+  const colorScheme = useColorScheme();
+
   return (
-    <QueryClientProvider client={queryClient}>
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
-    </QueryClientProvider>
+    <SafeAreaProvider>
+      <QueryClientProvider client={queryClient}>
+        <PaperProvider>
+          <Navigation colorScheme={colorScheme} />
+        </PaperProvider>
+      </QueryClientProvider>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

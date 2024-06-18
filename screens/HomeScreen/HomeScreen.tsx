@@ -1,14 +1,11 @@
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View } from 'react-native';
+import { Banner } from '@/components/Banner';
 
 const HomeScreen = ({ navigation }: { navigation: INavigation }) => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate('Profile')}
-      />
+    <View>
+      <Banner title='Suas entregas mais rápidas e seguras!' subTitle='Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.' />
     </View>
   );
 };

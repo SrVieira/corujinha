@@ -1,11 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Banner } from '@/components/Banner';
 
-const HomeScreen = ({ navigation }: { navigation: INavigation }) => {
+const HomeScreen = () => {
   return (
     <View>
-      <Banner title='Suas entregas mais rápidas e seguras!' subTitle='Lorem ipsum, Lorem ipsum, Lorem ipsum, Lorem ipsum.' />
+      HomeScreen
     </View>
   );
 };

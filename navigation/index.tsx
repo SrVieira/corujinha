@@ -1,21 +1,38 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { HomeScreen } from '@/screens/HomeScreen';
-import { ProfileScreen } from '@/screens/ProfileScreen';
 import Colors from '@/constants/Colors';
+import { Layout } from '@/components/Layout';
+import useAuth from '@/hooks/useAuth';
+import { publicRoutes, privateRoutes } from './routes';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
+  const { user } = useAuth();
+  const initialRouteName = user ? 'home' : 'dashboard';
+  const routes = user ? privateRoutes : publicRoutes;
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" screenOptions={{
+      <Stack.Navigator initialRouteName={initialRouteName} screenOptions={{
         headerShown: false,
         contentStyle: styles
       }}>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        {routes.map((route: any) => {
+          const Component = route.component;
+
+          return (
+            <Stack.Screen
+              key={route.name}
+              name={route.name}
+              component={(props: any) => (
+                <Layout>
+                  <Component {...props} />
+                </Layout>
+              )}
+            />
+          )
+        })}
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,10 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
+import { Typography } from '@/components/Typography';
 
 const HomeScreen = () => {
   return (
     <View>
-      HomeScreen
+      <Typography label='HomeScreen' variant="bodySmall" />
     </View>
   );
 };

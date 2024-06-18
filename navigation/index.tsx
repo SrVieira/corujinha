@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Colors from '@/constants/Colors';
 import { Layout } from '@/components/Layout';
 import useAuth from '@/hooks/useAuth';
 import { publicRoutes, privateRoutes } from './routes';
@@ -15,8 +14,7 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={initialRouteName} screenOptions={{
-        headerShown: false,
-        contentStyle: styles
+        headerShown: false
       }}>
         {routes.map((route: any) => {
           const Component = route.component;
@@ -37,10 +35,5 @@ const Navigation = () => {
     </NavigationContainer>
   );
 };
-
-const styles = {
-  backgroundColor: Colors.dark.background,
-  color: Colors.dark.text
-}
 
 export default Navigation;

@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   const { user } = useAuth();
-  const initialRouteName = user ? 'home' : 'dashboard';
+  const initialRouteName = user ? 'welcome' : 'dashboard';
   const routes = user ? privateRoutes : publicRoutes;
 
   return (

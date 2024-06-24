@@ -1,12 +1,16 @@
-import { DashboardScreen } from "@/screens/DashboardScreen";
 import { HomeScreen } from "@/screens/HomeScreen";
+import { WelcomeScreen } from "@/screens/WelcomeScreen";
 import { ProfileScreen } from "@/screens/ProfileScreen";
+import { LoginScreen } from "@/screens/LoginScreen";
+import { RegisterScreen } from "@/screens/RegisterScreen";
 
 export const publicRoutes = [
-  { name: 'home', component: HomeScreen },
+  { name: 'Welcome', component: WelcomeScreen },
+  { name: 'Login', component: LoginScreen },
+  { name: 'Register', component: RegisterScreen },
 ];
 
 export const privateRoutes = [
-  { name: 'profile', component: ProfileScreen },
-  { name: 'dashboard', component: DashboardScreen }
+  { name: 'Profile', component: ProfileScreen },
+  { name: 'Home', component: HomeScreen }
 ];

@@ -12,7 +12,7 @@ const WelcomeScreen = () => {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} style={styles.image}>
-        <View style={styles.texts}>
+        <View style={styles.content}>
           <Typography variant='bodyLarge' style={styles.title}>
             Suas entregas mais rápidas e seguras!
           </Typography>
@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     position: 'relative'
   },
-  texts: {
-    padding: 36,
+  content: {
+    paddingHorizontal: 36,
+    paddingVertical: 44,
     position: 'absolute',
     bottom: 0,
   },

@@ -1,11 +1,14 @@
 import React from 'react';
-import { useFonts, Inter_700Bold, Inter_400Regular } from '@expo-google-fonts/inter';
+import { useFonts, Inter_700Bold, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import { SafeAreaView, StyleSheet } from 'react-native';
+import { ThemeProvider } from 'react-native-paper';
+import theme from '@/theme';
 
 const Layout = ({ children }: { children: JSX.Element }) => {
   let [fontsLoaded, fontError] = useFonts({
     Inter_700Bold,
     Inter_400Regular,
+    Inter_500Medium,
   });
 
   if (!fontsLoaded && !fontError) {
@@ -13,7 +16,11 @@ const Layout = ({ children }: { children: JSX.Element }) => {
   }
 
   return (
-    <SafeAreaView style={styles.safeArea}>{children}</SafeAreaView >
+    <SafeAreaView style={styles.safeArea}>
+      <ThemeProvider theme={theme}>
+        {children}
+      </ThemeProvider>
+    </SafeAreaView >
   );
 }
 

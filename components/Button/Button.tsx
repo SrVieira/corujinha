@@ -3,7 +3,7 @@ import { GestureResponderEvent, StyleSheet } from 'react-native';
 import { Button as LibButton } from 'react-native-paper';
 import { ButtonMode } from 'react-native-paper/lib/typescript/components/Button/utils';
 
-const Button = ({ children, mode = 'text', variant = 'primary', onPress, icon }: IButton) => {
+const Button = ({ children, mode = 'contained', variant = 'primary', onPress, icon }: IButton) => {
   return (
     <LibButton style={styles(variant).button} labelStyle={styles(variant).label} mode={mode} onPress={onPress} icon={icon}>
       {children}
@@ -13,8 +13,8 @@ const Button = ({ children, mode = 'text', variant = 'primary', onPress, icon }:
 
 const styles = (variant: IButtonVariant) => StyleSheet.create({
   button: {
-    padding: 10,
-    borderRadius: 12,
+    padding: theme.buttons[variant].padding,
+    borderRadius: theme.buttons[variant].borderRadius,
     backgroundColor: theme.buttons[variant].backgroundColor
   },
   label: {

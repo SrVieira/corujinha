@@ -17,10 +17,10 @@ const AuthScreen = () => {
             Bora criar sua conta?
           </Typography>
           <View style={styles.actions}>
-            <Button icon="email" mode="contained" onPress={() => navigation.navigate('Auth')}>Criar conta com email</Button>
+            <Button icon="email" mode="contained" onPress={() => navigation.navigate('Register')}>Criar conta com email</Button>
             <Button icon="google" mode="contained" variant="secondary" onPress={() => navigation.navigate('Auth')}>Criar conta com Google</Button>
             <Button icon="facebook" mode="contained" variant="secondary" onPress={() => navigation.navigate('Auth')}>Criar conta com Facebook</Button>
-            <Typography variant='bodySmall' style={styles.alreadyRegistred}>
+            <Typography variant='bodySmall' style={styles.alreadyRegistred} onPress={() => navigation.navigate('Register')}>
               Já tenho uma conta
             </Typography>
           </View>

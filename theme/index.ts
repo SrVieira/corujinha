@@ -31,12 +31,16 @@ const theme = {
   buttons: {
     primary: {
       color: '#FFFFFF',
+      borderRadius: 12,
+      padding: 10,
       backgroundColor: '#EF5600',
     },
     secondary: {
       color: '#121212',
+      borderRadius: 12,
+      padding: 10,
       backgroundColor: '#FFFFFF'
-    },
+    }
   }
 };
 

@@ -22,6 +22,16 @@ const theme = {
       color: '#7A7A7A'
     }
   },
+  buttons: {
+    primary: {
+      color: '#FFFFFF',
+      backgroundColor: '#EF5600',
+    },
+    secondary: {
+      color: '#121212',
+      backgroundColor: '#FFFFFF'
+    },
+  }
 };
 
 export default theme;

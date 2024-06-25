@@ -6,7 +6,7 @@ import { Button } from '@/components/Button';
 
 const image = require('@/assets/images/background.png');
 
-const WelcomeScreen = () => {
+const AuthScreen = () => {
   const navigation: INavigation = useNavigation();
 
   return (
@@ -14,13 +14,12 @@ const WelcomeScreen = () => {
       <ImageBackground source={image} style={styles.image}>
         <View style={styles.content}>
           <Typography variant='bodyLarge' style={styles.title}>
-            Suas entregas mais rápidas e seguras!
-          </Typography>
-          <Typography variant='bodyMedium'>
-            Amamos transformar cada entrega em uma experiência excepcional!
+            Bora criar sua conta?
           </Typography>
           <View style={styles.buttons}>
-            <Button mode="contained" onPress={() => navigation.navigate('Auth')}>Começar Agora</Button>
+            <Button icon="email" mode="contained" onPress={() => navigation.navigate('Auth')}>Criar conta com email</Button>
+            <Button icon="google" mode="contained" variant="secondary" onPress={() => navigation.navigate('Auth')}>Criar conta com Google</Button>
+            <Button icon="facebook" mode="contained" variant="secondary" onPress={() => navigation.navigate('Auth')}>Criar conta com Facebook</Button>
           </View>
         </View>
       </ImageBackground>
@@ -46,11 +45,12 @@ const styles = StyleSheet.create({
     right: 0,
   },
   buttons: {
-    marginTop: 80
+    marginTop: 80,
+    gap: 14
   },
   title: {
     marginBottom: 6
   }
 });
 
-export default WelcomeScreen;
+export default AuthScreen;

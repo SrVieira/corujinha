@@ -20,6 +20,12 @@ const theme = {
       fontWeight: 400,
       fontFamily: 'Inter_400Regular',
       color: '#7A7A7A'
+    },
+    bodySmall: {
+      fontSize: 16,
+      fontWeight: 400,
+      fontFamily: 'Inter_400Regular',
+      color: '#7A7A7A'
     }
   },
   buttons: {

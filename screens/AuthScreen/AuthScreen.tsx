@@ -16,10 +16,13 @@ const AuthScreen = () => {
           <Typography variant='bodyLarge' style={styles.title}>
             Bora criar sua conta?
           </Typography>
-          <View style={styles.buttons}>
+          <View style={styles.actions}>
             <Button icon="email" mode="contained" onPress={() => navigation.navigate('Auth')}>Criar conta com email</Button>
             <Button icon="google" mode="contained" variant="secondary" onPress={() => navigation.navigate('Auth')}>Criar conta com Google</Button>
             <Button icon="facebook" mode="contained" variant="secondary" onPress={() => navigation.navigate('Auth')}>Criar conta com Facebook</Button>
+            <Typography variant='bodySmall' style={styles.alreadyRegistred}>
+              Já tenho uma conta
+            </Typography>
           </View>
         </View>
       </ImageBackground>
@@ -44,12 +47,16 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
   },
-  buttons: {
+  actions: {
     marginTop: 80,
     gap: 14
   },
   title: {
     marginBottom: 6
+  },
+  alreadyRegistred: {
+    textAlign: 'center',
+    textDecorationLine: 'underline'
   }
 });
 
